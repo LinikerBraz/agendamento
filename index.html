@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Barbearia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🪒 Barbearia Agendamento</h1>
+            <p>Agende seu horário de forma rápida e fácil</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <h2>Novo Agendamento</h2>
+                
+                <form id="agendamentoForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">WhatsApp (com DDD):</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="11999999999" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hora">Horário:</label>
+                        <select id="hora" name="hora" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="08:00">08:00</option>
+                            <option value="08:30">08:30</option>
+                            <option value="09:00">09:00</option>
+                            <option value="09:30">09:30</option>
+                            <option value="10:00">10:00</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00">18:00</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Agendar Horário</button>
+                </form>
+
+                <div id="mensagem" class="mensagem"></div>
+            </div>
+
+            <div class="info-container">
+                <h3>Informações Importantes</h3>
+                <ul>
+                    <li>Horário de funcionamento: 8h às 18h</li>
+                    <li>Fechado aos domingos e feriados</li>
+                    <li>Intervalo para almoço: 12h às 14h</li>
+                    <li>Confirmação via WhatsApp após agendamento</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <a href="barbeiro.html" class="link-barbeiro">Área do Barbeiro</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar página do cliente
+        document.addEventListener('DOMContentLoaded', function() {
+            initClientePage();
+        });
+    </script>
+</body>
+</html>

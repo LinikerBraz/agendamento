@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Barbeiro - Agendamentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🪒 Área do Barbeiro</h1>
+            <p>Gerencie seus agendamentos e férias</p>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('agendamentos')">Agendamentos</button>
+            <button class="tab-btn" onclick="showTab('ferias')">Férias</button>
+        </nav>
+
+        <main>
+            <!-- Tab Agendamentos -->
+            <div id="agendamentos-tab" class="tab-content active">
+                <div class="date-selector">
+                    <label for="dataConsulta">Ver agendamentos do dia:</label>
+                    <input type="date" id="dataConsulta" onchange="loadAgendamentos()">
+                </div>
+
+                <div id="agendamentos-lista" class="agendamentos-container">
+                    <!-- Agendamentos serão carregados aqui -->
+                </div>
+
+                <div id="notificacao" class="notificacao hidden">
+                    <span>🔔 Novo agendamento recebido!</span>
+                    <button onclick="hideNotification()">×</button>
+                </div>
+            </div>
+
+            <!-- Tab Férias -->
+            <div id="ferias-tab" class="tab-content">
+                <div class="ferias-form">
+                    <h3>Adicionar Período de Férias</h3>
+                    <form id="feriasForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inicioFerias">Data Início:</label>
+                                <input type="date" id="inicioFerias" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fimFerias">Data Fim:</label>
+                                <input type="date" id="fimFerias" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Adicionar Férias</button>
+                    </form>
+                </div>
+
+                <div id="ferias-lista" class="ferias-container">
+                    <!-- Lista de férias será carregada aqui -->
+                </div>
+
+                <div class="feriados-info">
+                    <h3>Feriados Cadastrados</h3>
+                    <div id="feriados-lista" class="feriados-container">
+                        <!-- Lista de feriados será carregada aqui -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <a href="index.html" class="link-cliente">Voltar para Agendamentos</a>
+        </footer>
+    </div>
+
+    <!-- Audio para notificação -->
+    <audio id="notificationSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar página do barbeiro
+        document.addEventListener('DOMContentLoaded', function() {
+            initBarbeiroPage();
+        });
+    </script>
+</body>
+</html>
